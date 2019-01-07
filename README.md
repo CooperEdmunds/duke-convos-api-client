@@ -1,4 +1,4 @@
-## Installing
+# Installing
 
 Using npm:
 
@@ -6,7 +6,7 @@ Using npm:
 npm i duke-convos-api
 ```
 
-## Usage
+# Usage
 
 ```javascript
 var api = require("duke-convos-api");
@@ -43,13 +43,44 @@ api.getDinner(
 );
 ```
 
-## All available functions
+# All available functions
+
+### Dinners
 
 - getDinners(successCallback, errorCallback)
 - getDinner(dinnerId, successCallback, errorCallback)
+- createDinner(dinnerObj, successCallback, errorCallback)
+- updateDinner(id, dinnerObj, successCallback, errorCallback)
+- deleteDinner(id, successCallback, errorCallback)
+
+### Professors
+
 - getProfessors(successCallback, errorCallback)
 - getProfessor(professorId, successCallback, errorCallback)
+- createProfessor(professorObj, successCallback, errorCallback)
+- updateProfessor(uniqueID, professorObj, successCallback, errorCallback)
+- deleteProfessor(uniqueID, successCallback, errorCallback)
+
+### Students
+
 - getStudents(successCallback, errorCallback)
 - getStudent(netID, successCallback, errorCallback)
+- createStudent(studentObj, successCallback, errorCallback)
+- updateStudent(netID, studentObj, successCallback, errorCallback)
+- deleteStudent(netID, successCallback, errorCallback)
+
+### Users
+
 - getUsers(successCallback, errorCallback)
 - getUser(id, successCallback, errorCallback)
+
+### Check in
+
+- updateApplicationAttendance(attendanceDict, successCallback, errorCallback)
+  - statusDict: maps application id to "present" boolean
+
+### Selection
+
+- updateApplicationStatuses(statusDict, successCallback, errorCallback)
+  - statusDict: maps application id to new status int
+- confirmDinnerSelection(dinnerID, successCallback, errorCallback)

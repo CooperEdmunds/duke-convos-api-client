@@ -1,6 +1,6 @@
 {
   "name": "duke-convos-api",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A collection of api endpoints for Duke Conversations frontends",
   "main": "index.js",
   "scripts": {
