@@ -1,11 +1,25 @@
 "use strict";
 
 var axios = require("axios");
+var Cookies = require("js-cookie");
 
 // Instantiate an axios client
 const api = axios.create({
-  baseURL: `https://cors-anywhere.herokuapp.com/https://dukeconvo.herokuapp.com/`
+  baseURL: `https://dukeconvo.herokuapp.com/`
 });
+
+api.interceptors.request.use(
+  function(config) {
+    const token = Cookies.get("token");
+    config.headers.Authorization = token ? `Bearer ${token}` : "";
+    console.log(config);
+    return config;
+  },
+  function(error) {
+    // Do something with request error
+    return Promise.reject(error);
+  }
+);
 
 // *************************
 //         Dinners
