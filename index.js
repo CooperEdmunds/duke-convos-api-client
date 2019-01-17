@@ -33,7 +33,7 @@ exports.getDinners = function(successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 // Get dinner with given id
@@ -44,7 +44,7 @@ exports.getDinner = function(id, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -59,7 +59,7 @@ exports.createDinner = function(dinnerObj, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -76,7 +76,7 @@ exports.updateDinner = function(id, dinnerObj, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -87,7 +87,7 @@ exports.deleteDinner = function(id, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 // *************************
@@ -102,7 +102,7 @@ exports.getProfessors = function(successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 // Get professor with the given id
@@ -113,7 +113,7 @@ exports.getProfessor = function(id, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -134,7 +134,7 @@ exports.createProfessor = function(
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -158,7 +158,7 @@ exports.updateProfessor = function(
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -169,7 +169,7 @@ exports.deleteProfessor = function(uniqueID, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -185,7 +185,7 @@ exports.getStudents = function(successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 // Get student with the given netid
@@ -196,7 +196,7 @@ exports.getStudent = function(netID, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -213,7 +213,7 @@ exports.createStudent = function(studentObj, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -241,7 +241,7 @@ exports.updateStudent = function(
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -252,7 +252,7 @@ exports.deleteStudent = function(netID, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -268,7 +268,7 @@ exports.getUsers = function(successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -280,7 +280,7 @@ exports.getUser = function(id, successCallback, errorCallback) {
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -299,7 +299,7 @@ exports.updateApplicationAttendance = function(
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -318,7 +318,7 @@ exports.updateApplicationStatuses = function(
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
 
@@ -333,6 +333,6 @@ exports.confirmDinnerSelection = function(
       successCallback(response.data);
     })
     .catch(error => {
-      errorCallback(error);
+      errorCallback(error.response);
     });
 };
