@@ -2,6 +2,7 @@
 
 var axios = require("axios");
 var Cookies = require("js-cookie");
+var moment = require("moment");
 
 // Instantiate an axios client
 const api = axios.create({
@@ -31,6 +32,35 @@ exports.getDinners = function(successCallback, errorCallback) {
     .get("dinners")
     .then(response => {
       successCallback(response.data);
+    })
+    .catch(error => {
+      errorCallback(error.response);
+    });
+};
+
+exports.getActiveDinners = function(successCallback, errorCallback) {
+  api
+    .get("dinners")
+    .then(response => {
+      let dinners = response.data;
+      let activeDinners = [];
+
+      // not status 2
+      // not more than 3 weeks in the future
+      // not less than the thursday before the dinner
+
+      for (let i = 0; i < dinners.length; i++) {
+        let dinner = dinners[i];
+        if (dinner.status === 2) continue;
+        let dinnerDate = moment.unix(dinner.timeStamp);
+        if (dinnerDate.endOf("week").fromNow() > 3) continue;
+        let thursBeforeDinner = dinnerDate.isBefore(dinnerDate.day(4))
+          ? dinnerDate.day(-4)
+          : dinnerDate.day(4);
+        if (thursBeforeDinner.isBefore(moment())) continue;
+        activeDinners.push(dinner);
+      }
+      successCallback(activeDinners);
     })
     .catch(error => {
       errorCallback(error.response);

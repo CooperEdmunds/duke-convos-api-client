@@ -1,6 +1,6 @@
 {
   "name": "duke-convos-api",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A collection of api endpoints for Duke Conversations frontends",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "author": "Cooper Edmunds <cooper6789@gmail.com> (https://github.com/CooperEdmunds)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "moment": "^2.23.0"
   }
 }
