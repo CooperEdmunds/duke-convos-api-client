@@ -314,6 +314,20 @@ exports.getUser = function(id, successCallback, errorCallback) {
     });
 };
 
+// Create a new user
+exports.createUser = function(userObj, successCallback, errorCallback) {
+  let clonedUser = JSON.parse(JSON.stringify(userObj));
+
+  api
+    .post("/user/register", clonedUser)
+    .then(response => {
+      successCallback(response.data);
+    })
+    .catch(error => {
+      errorCallback(error.response);
+    });
+};
+
 // *************************
 //         Checkin
 // *************************
