@@ -328,6 +328,20 @@ exports.createUser = function(userObj, successCallback, errorCallback) {
     });
 };
 
+// Update a new user
+exports.updateUser = function(userID, userObj, successCallback, errorCallback) {
+  let clonedUser = JSON.parse(JSON.stringify(userObj));
+
+  api
+    .put("user/" + userID, clonedUser)
+    .then(response => {
+      successCallback(response.data);
+    })
+    .catch(error => {
+      errorCallback(error.response);
+    });
+};
+
 // *************************
 //         Checkin
 // *************************
